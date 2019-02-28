@@ -2,7 +2,7 @@
   <div id="viewport">
     <div id="header">
       <div class="icon">
-        <img src="../src/assets/9_4_7_1275947_facebooklogopixabay_638327.jpg" alt>
+        <img src="../src/assets/fb.jpg" alt>
       </div>
     </div>
     <div id="app">
