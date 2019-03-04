@@ -1,21 +1,21 @@
 <template>
   <div>
     <div>
-        <myHeader></myHeader>
-        <myContent/>
+        <my-Header></my-Header>
+        <my-Content/>
     </div>
   </div>
 </template>
 
 <script>
-import myHeader from './components/header'
-import myContent from './components/content';
+import MyHeader from './components/header'
+import MyContent from './components/content';
 
 export default {
   
   components: {
-    myHeader,
-    myContent
+    MyHeader,
+    MyContent
   }
 }
 </script>

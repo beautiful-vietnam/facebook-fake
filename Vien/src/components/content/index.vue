@@ -10,10 +10,10 @@
             type="text" 
             placeholder="Email hoặc Số điện thoại"> 
        <input 
-        class="text-input" 
-        v-model="password"
-        type="text" 
-        placeholder="Mật Khẩu">
+            class="text-input" 
+            v-model="password"
+            type="text" 
+            placeholder="Mật Khẩu">
        <button
        @click="submit"
         class="btn-submit">
