@@ -4,21 +4,21 @@
       <div id="navbar">
         <table class="tablewrapper">
           <tr>
-            <td class="row1">Email hoặc điện thoại</td>
-            <td class="row1">Mật khẩu</td>
+            <td class="row1">Email or Phone</td>
+            <td class="row1">Password</td>
           </tr>
           <tr>
             <td><input type="text" class="inputtext" /></td>
             <td><input type="text" class="inputtext" /></td>
             <td>
-              <div id="button">Đăng nhập</div>
+              <div id="button">Log In</div>
             </td>
           </tr>
           <tr>
             <td>
               <div class="row2"></div>
             </td>
-            <td class="row2 h">Quên tài khoản?</td>
+            <td class="row2 h">Forgot your password?</td>
           </tr>
         </table>
 
@@ -30,46 +30,68 @@
       <div id="content">
         <div id="leftbod">
           <div class="connect bolder">
-            Facebook giúp bạn kết nối và chia sẻ với mọi người trong cuộc sống
-            của bạn.
+            Connect with friends and the world around you on Facebook.
           </div>
           <div class="leftbar">
             <img src="/facebook.png" alt="facebook" class="" />
           </div>
         </div>
         <div id="rightbod">
-          <div class="signup bolder">Đăng ký</div>
-          <div class="free bolder">Luôn miễn phí</div>
+          <div class="signup bolder">Sign Up</div>
+          <div class="free bolder">It's free and always will be</div>
 
           <div class="formbox">
-            <input type="text" class="inputbody in1" placeholder="Họ" />
+            <input type="text" class="inputbody in1" placeholder="First name" />
             <input
               type="text"
-              class="inputbody in1 input-name"
-              placeholder="Tên"
+              class="inputbody in1 fr"
+              placeholder="Last name"
             />
           </div>
           <div class="formbox">
             <input
               type="text"
               class="inputbody in2"
-              placeholder="Số điện thoại di động hoặc email"
+              placeholder="Email or mobile number"
             />
           </div>
           <div class="formbox">
             <input
               type="text"
               class="inputbody in2"
-              placeholder="Mật khẩu mới"
+              placeholder="Re-enter email or mobile number"
             />
           </div>
           <div class="formbox">
-            <div class="bday">Ngày sinh</div>
+            <input
+              type="text"
+              class="inputbody in2"
+              placeholder="New password"
+            />
+          </div>
+          <div class="formbox">
+            <div class="bday">Birthday</div>
           </div>
           <div class="formbox">
             <span data-type="selectors"></span>
             <span>
+              <select title="Month" class="selectbody">
+                <option value="0" selected="1">Month</option>
+                <option value="1">Jan</option>
+                <option value="2">Feb</option>
+                <option value="3">Mar</option>
+                <option value="4">Apr</option>
+                <option value="5">May</option>
+                <option value="6">Jun</option>
+                <option value="7">Jul</option>
+                <option value="8">Aug</option>
+                <option value="9">Sep</option>
+                <option value="10">Oct</option>
+                <option value="11">Nov</option>
+                <option value="12">Dec</option>
+              </select>
               <select title="Day" class="selectbody fl">
+                <option value="0" selected="1">Day</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -86,7 +108,7 @@
                 <option value="14">14</option>
                 <option value="15">15</option>
                 <option value="16">16</option>
-                <option value="17" selected>17</option>
+                <option value="17">17</option>
                 <option value="18">18</option>
                 <option value="19">19</option>
                 <option value="20">20</option>
@@ -102,21 +124,8 @@
                 <option value="30">30</option>
                 <option value="31">31</option>
               </select>
-              <select title="Month" class="selectbody fl">
-                <option value="1">Tháng 1</option>
-                <option value="2">Tháng 2</option>
-                <option value="3">Tháng 3</option>
-                <option value="4" selected>Tháng 4</option>
-                <option value="5">Tháng 5</option>
-                <option value="6">Tháng 6</option>
-                <option value="7">Tháng 7</option>
-                <option value="8">Tháng 8</option>
-                <option value="9">Tháng 9</option>
-                <option value="10">Tháng 10</option>
-                <option value="11">Tháng 11</option>
-                <option value="12">Tháng 12</option>
-              </select>
-              <select title="Year" class="selectbody">
+              <select title="Year" class="selectbody fl">
+                <option value="0" selected="1">Year</option>
                 <option value="2015">2015</option>
                 <option value="2014">2014</option>
                 <option value="2013">2013</option>
@@ -138,7 +147,7 @@
                 <option value="1997">1997</option>
                 <option value="1996">1996</option>
                 <option value="1995">1995</option>
-                <option value="1994" selected>1994</option>
+                <option value="1994">1994</option>
                 <option value="1993">1993</option>
                 <option value="1992">1992</option>
                 <option value="1991">1991</option>
@@ -230,35 +239,34 @@
                 <option value="1905">1905</option>
               </select>
             </span>
-            <div class="fb1 why h">
-              Tại sao tôi cần cung cấp ngày sinh của mình
-            </div>
+            <div class="fb1 why h">Why do I need to provide my birthday?</div>
           </div>
           <div class="formbox mt1">
             <span data-type="radio" class="spanpad">
               <input type="radio" class="m0" />
-              <label for="fem" class="gender">Nữ </label>
+              <label for="fem" class="gender">Female </label>
               <input type="radio" class="m0" />
-              <label for="male" class="gender">Nam </label>
+              <label for="male" class="gender">Male </label>
             </span>
           </div>
           <div class="formbox">
             <div class="agree">
-              Bằng cách nhấp vào Đăng ký, bạn đồng ý với
-              <div class="link">Điều khoản, Chính sách dữ liệu</div>
-              và
-              <div class="link">Chính sách cookie</div>
-              của chúng tôi. Bạn có thể nhận được thông báo của chúng tôi qua
-              SMS và hủy nhận bất kỳ lúc nào.
+              By clicking Sign Up, you agree to our
+              <div class="link">Terms</div>
+              and that you have read our
+              <div class="link">Data Use Policy</div>
+              , including our
+              <div class="link">Cookie Use</div>
+              .
             </div>
           </div>
           <div class="formbox">
-            <button type="submit" class="signbut bolder">Đăng ký</button>
+            <button type="submit" class="signbut bolder">Sign Up</button>
           </div>
           <div class="formbox">
             <div class="create">
-              <div class="link h">Tạo trang</div>
-              dành cho người nổi tiếng, nhãn hiệu hoặc doanh nghiệp.
+              <div class="link h">Create a Page</div>
+              for a celebrity, band or business.
             </div>
           </div>
         </div>
@@ -276,10 +284,6 @@ body {
   margin: 0;
   font-family: 'Lucida Grande', tahoma, verdana, arial, sans-serif;
   line-height: 1.28;
-}
-
-.input-name {
-  width: 198px !important;
 }
 
 #navwrapper {
@@ -322,7 +326,7 @@ h1 {
 
 #button {
   position: relative;
-  width: 80px;
+  width: 55px;
   height: 20px;
   background-color: #5b72a9;
   border: 1px solid #999;
@@ -333,7 +337,6 @@ h1 {
   font-weight: bold;
   text-align: center;
   color: #fff;
-  line-height: 16px;
 }
 
 .tablewrapper {
@@ -373,8 +376,8 @@ h1 {
 .connect {
   width: 409px;
   height: 72px;
-  padding: 17px 0 24px;
-  font-size: 20px;
+  padding: 42px 0 24px;
+  font-size: 22px;
   font-weight: 700;
   line-height: 36px;
   color: #333;
