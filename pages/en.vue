@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="navwrapper">
+    <div id="navwrapper" class="is-hidden-mobile">
       <div id="navbar">
         <table class="tablewrapper">
           <tr>
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <div id="contentwrapper">
+    <div id="contentwrapper" class="is-hidden-mobile">
       <div id="content">
         <div id="leftbod">
           <div class="connect bolder">
@@ -290,6 +290,8 @@ body {
   width: 100%;
   height: 82px;
   background-color: #3b5998;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  border-bottom: 1px solid #133783;
 }
 
 #navbar {
@@ -321,7 +323,8 @@ h1 {
 
 .logowrapper {
   display: block;
-  padding: 24px 0;
+  padding: 20px 0;
+  font-weight: bold;
 }
 
 #button {
@@ -349,6 +352,7 @@ h1 {
   font-size: 11px;
   width: 164px;
   cursor: pointer;
+  padding-bottom: 3px;
 }
 
 .inputtext {
@@ -366,6 +370,7 @@ h1 {
   font-size: 11px;
   width: 164px;
   cursor: pointer;
+  padding-top: 3px;
 }
 
 #leftbod {

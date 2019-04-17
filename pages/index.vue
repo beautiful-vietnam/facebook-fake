@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="navwrapper">
+    <div id="navwrapper" class="is-hidden-mobile">
       <div id="navbar">
         <table class="tablewrapper">
           <tr>
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <div id="contentwrapper">
+    <div id="contentwrapper" class="is-hidden-mobile">
       <div id="content">
         <div id="leftbod">
           <div class="connect bolder">
@@ -264,6 +264,49 @@
         </div>
       </div>
     </div>
+
+    <div class="is-hidden-tablet">
+      <div class="viewport">
+        <div class="header">
+          <div class="wrap-fb">
+            <img src="/fb.jpg" class="facebook" />
+          </div>
+        </div>
+        <div class="app">
+          <div class="loginform">
+            <form>
+              <div class="inputBox">
+                <input
+                  name="username"
+                  autofocus
+                  class="_inputEmail"
+                  type="text"
+                  placeholder="Số di động hoặc email"
+                />
+                <input
+                  name="password"
+                  class="_inputPass"
+                  type="password"
+                  placeholder="Mật khẩu"
+                />
+              </div>
+              <button class="btnLogin" type="submit" value="Login" name="login">
+                <span>Đăng Nhập</span>
+              </button>
+            </form>
+            <div class="wrap-or">
+              ------------ hoặc ------------
+            </div>
+            <div class="wrap-create-account">
+              <button class="create-account">
+                Tạo tài khoản mới
+              </button>
+              <p class="more-info">Quên mật khẩu? Trung tâm trợ giúp</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -272,6 +315,25 @@ export default {}
 </script>
 
 <style>
+.wrap-create-account {
+  text-align: center;
+}
+
+.more-info {
+  margin-top: 10px;
+  font-size: 10px;
+  color: #7596c8;
+}
+.create-account {
+  background: #00a400;
+  color: white;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 0;
+}
+
 body {
   margin: 0;
   font-family: 'Lucida Grande', tahoma, verdana, arial, sans-serif;
@@ -286,6 +348,8 @@ body {
   width: 100%;
   height: 82px;
   background-color: #3b5998;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  border-bottom: 1px solid #133783;
 }
 
 #navbar {
@@ -317,7 +381,8 @@ h1 {
 
 .logowrapper {
   display: block;
-  padding: 24px 0;
+  padding: 20px 0;
+  font-weight: bold;
 }
 
 #button {
@@ -346,6 +411,7 @@ h1 {
   font-size: 11px;
   width: 164px;
   cursor: pointer;
+  padding-bottom: 3px;
 }
 
 .inputtext {
@@ -363,6 +429,7 @@ h1 {
   font-size: 11px;
   width: 164px;
   cursor: pointer;
+  padding-top: 3px;
 }
 
 #leftbod {
@@ -449,6 +516,10 @@ h1 {
   margin-bottom: 10px;
 }
 
+.wrap-fb {
+  text-align: center;
+}
+
 ::-webkit-input-placeholder {
   color: #999;
 }
@@ -482,6 +553,11 @@ h1 {
   color: #141823;
   -webkit-font-smoothing: antialiased;
   margin-bottom: 5px;
+}
+
+.facebook {
+  width: 90px;
+  margin-top: 6px;
 }
 
 .selectbody {
@@ -571,5 +647,80 @@ h1 {
   font-weight: bold;
   margin-top: 10px;
   padding-top: 15px;
+}
+
+.viewport {
+  min-width: 100%;
+  width: 100%;
+}
+
+.header {
+  background-color: #3b5998;
+  position: relative;
+  box-sizing: border-box;
+  height: 35px;
+  width: 100%;
+}
+
+.icon img {
+  height: 25px;
+  width: auto;
+  margin: 8px 0;
+}
+
+#app {
+  text-align: center;
+}
+
+.loginform {
+  background-color: #eceff5;
+  padding: 20px 15px 30px 15px;
+  margin: 0 auto;
+}
+
+.wrap-or {
+  text-align: center;
+  color: gray;
+  font-size: 11px;
+  margin: 10px;
+}
+
+.warningBox {
+  background-color: #fff9d7;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.inputBox {
+  padding-bottom: 12px;
+}
+
+._inputEmail {
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.101);
+  padding: 8px;
+  font-size: 12px;
+}
+
+._inputPass {
+  border-radius: 0 0 4px 4px;
+  width: 100%;
+  padding: 8px;
+  font-size: 12px;
+  border: 1px solid #dcdcdc;
+  margin-top: -1px;
+}
+
+.btnLogin {
+  width: 100%;
+  background-color: #3578e5;
+  font-weight: bold;
+  font-size: 13px;
+  height: 32px;
+  line-height: 28px;
+  color: #fff;
+  border-radius: 4px;
 }
 </style>
