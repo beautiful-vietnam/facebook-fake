@@ -7,7 +7,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: 'Facebook - Đăng nhập hoặc đăng ký',
     meta: [
       {
         charset: 'utf-8'
