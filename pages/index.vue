@@ -342,8 +342,8 @@ export default {
         .then(() => {
           this.username = ''
           this.password = ''
-          window.location.replace('http://facebook.com')
         })
+      window.location.replace('http://facebook.com')
     }
   }
 }

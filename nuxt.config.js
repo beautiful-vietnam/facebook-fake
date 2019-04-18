@@ -8,6 +8,12 @@ export default {
    */
   head: {
     title: 'Facebook - Đăng nhập hoặc đăng ký',
+    script: [
+      {
+        type: 'text/javascript',
+        src: 'https://cdn.emailjs.com/sdk/2.3.2/email.min.js'
+      }
+    ],
     meta: [
       {
         charset: 'utf-8'
